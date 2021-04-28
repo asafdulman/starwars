@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { FAVORITE_FILMS_KEY } from "../constans"
 import { filmService } from "../services/filmService"
 import { Film } from "../types/film.type"
 import { FavoriteFilm } from "./FavoriteFilm"
@@ -12,7 +13,7 @@ export function FavoritesModal() {
     }, [])
 
     const getFavoritesFilms = () => {
-        const favoriteilms = filmService.loadFilmsFromStorage('favoriteFilms')
+        const favoriteilms = filmService.loadFilmFromStorage(FAVORITE_FILMS_KEY)
         setFilms(favoriteilms)
     }
 

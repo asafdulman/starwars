@@ -1,0 +1,43 @@
+
+@import '../scss/components/filmTableList';
+@import '../scss/components/filmPreview';
+@import '../scss/components/filmItem';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #573d2b;
+    
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.app {
+    width: 1240px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #573d2b;
+}
+
+.show-favorites-films-btn {
+    position: absolute;
+}
+
+button {
+    cursor: pointer;
+}
+
+.logo-img {
+    width: 150px;
+    height: 100px;
+    background-color: transparent;
+}

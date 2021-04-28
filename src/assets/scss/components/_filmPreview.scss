@@ -1,0 +1,17 @@
+.film-preview-box {
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 100px;
+
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        line-height: 2;
+        font-size: 1.2rem;
+    }
+}

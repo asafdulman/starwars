@@ -1,12 +1,12 @@
 
 interface Props {
-    filmTitle: string
+    message: string
 }
 
-export function ErrorMessage({ filmTitle }: Props) {
+export function ErrorMessage({ message }: Props) {
     return (
         <div className="error-message-modal-box">
-            <p>{filmTitle} is already a favorite film!</p>
+            <p>{message}</p>
         </div>
     )
 }

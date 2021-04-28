@@ -1,12 +1,12 @@
 import { Film } from "../types/film.type";
 
-interface Props {
+interface FilmPreviewProps {
     film: Film;
     addToFavorites: (film: Film) => void | undefined
 }
 
 
-export function FilmPreview({ film, addToFavorites }: Props) {
+export function FilmPreview({ film, addToFavorites }: FilmPreviewProps) {
     return (
         <div className="film-preview-box">
             <h1>{film.title}</h1>
