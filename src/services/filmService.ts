@@ -6,7 +6,6 @@ export const filmService = {
 
 async function getFilms(): Promise<any> {
     const films = await axios.get('https://swapi.dev/api/films/')
-    console.log(films.data.results);
-     
+    return films.data.results
 }
 
