@@ -1,0 +1,70 @@
+.favorites-modal-box {
+    position: fixed;
+    background-color: rgb(231, 231, 231);
+    width: 80%;
+    height: 80%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+
+}
+
+
+
+.favorites-modal-box-close {
+    position: fixed;
+    background-color: rgb(211, 211, 211);
+    width: 95%;
+    height: 95%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.98;
+    left: 50%;
+    top: 50%;
+    transform: translate(-200%, -200%);
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.modal-films-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+}
+
+.show-favorites-films-btn {
+    position: absolute;
+    top: 20px;
+    left: 160px;
+    padding: 15px 25px;
+    border: none;
+    background-color: $secondary-color;
+    color: $primary-color;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0px 10px 10px 2px #E0E0E0;
+    transition: transform 0.4s ease;
+
+    &:active {  
+        transform: scale(0.9);
+    }
+
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+}

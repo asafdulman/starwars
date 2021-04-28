@@ -1,21 +1,26 @@
 
+$primary-color: #573d2b;
+$secondary-color: #a4c4a4;
+
 @import '../scss/components/filmTableList';
 @import '../scss/components/filmPreview';
 @import '../scss/components/filmItem';
+@import '../scss/components/userMessage';
+@import '../scss/components/favoritesModal';
+@import '../scss/components/favoriteFilm';
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    background-color: #573d2b;
-    
+    background-color: whitesmoke;
     font-family: 'Poppins', sans-serif;
     margin: 0;
 }
 
 .app {
-    width: 1240px;
+    width: 1110px;
     margin: 0 auto;
     position: relative;
 }
@@ -23,21 +28,17 @@ body {
 .main-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #573d2b;
 }
 
-.show-favorites-films-btn {
-    position: absolute;
+.logo-img {
+    width: 150px;
+    height: 100px;
 }
 
 button {
     cursor: pointer;
 }
 
-.logo-img {
-    width: 150px;
-    height: 100px;
-    background-color: transparent;
+.missing-films-message {
+    margin: 250px auto;
 }

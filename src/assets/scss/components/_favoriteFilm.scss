@@ -1,0 +1,20 @@
+.favorite-film-box {
+    width: 300px;
+    padding: 30px;
+    border-radius: 5px;
+    border: 1px solid $secondary-color;
+    margin: 10px;
+    text-align: center;
+
+    
+}
+
+.remove-film-btn {
+    padding: 5px 10px;
+    font-family: 'Poppins' ,sans-serif;
+    background-color: $primary-color;
+    color: white;
+    font-size: 12px;
+    border-radius: 20px;
+    border: none;
+}

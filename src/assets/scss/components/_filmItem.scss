@@ -1,6 +1,14 @@
 .film-item-box {
-    background-color: #a4c4a4;
+    background-color: $primary-color;
+    color: $secondary-color;
     text-align: center;
-    margin: 15px;
+    margin: 15px 0;
     cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid $secondary-color;
+
+    p {
+        font-size: 1.3rem;
+    }
 }

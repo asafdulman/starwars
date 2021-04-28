@@ -5,16 +5,18 @@ import { Film } from './types/film.type';
 import { FilmItem } from './components/FilmItem';
 import { FilmPreview } from './components/FilmPreview';
 import { FavoritesModal } from './components/FavoritesModal';
-import { ErrorMessage } from './components/ErrorMessage';
 import { FAVORITE_FILMS_KEY } from './constans';
 import logo from './assets/img/logo.png';
+import { UserMessage } from './types/userMessage.type';
+import { UserNotification } from './components/UserNotification';
 
 function App() {
 
   const [films, setFilms] = useState<Film[] | null>()
+  const [isFavoritesModalOpen, setIsFavoritesModalOpen] = useState(false)
   const [selectedFilm, setSelectedFilm] = useState<Film | null>()
-  const [isFavoritesModalOpen, setIsFavoritesModalOpen] = useState<boolean>(false)
-  const [errorMessage, setErrorMessage] = useState<string | undefined>('')
+  const [showFavoriteMessage, setShowFavoriteMessage] = useState<boolean>(false)
+  const [userMessage, setUserMessage] = useState<UserMessage | null>(null)
 
   useEffect(() => {
     getFilmsFromService()
@@ -27,35 +29,27 @@ function App() {
 
   const selectFilm = (film: Film): void => setSelectedFilm(film)
 
-  const renderFavoritesButton = () => {
-    return <button className="show-favorites-films-btn" onClick={() => setIsFavoritesModalOpen(!isFavoritesModalOpen)}>My Favorite Films</button>
-  }
-
-  const renderLogoImg = () => {
-    return <img className="logo-img" src={logo} alt="" />
-  }
-
   const addToFavorites = (film: Film): void => {
-    const errorMessage = filmService.saveFilmToStorage(FAVORITE_FILMS_KEY, film)
-    if (errorMessage) {
-      setErrorMessage(errorMessage)
-      setTimeout(() => {
-        setErrorMessage('')
-      }, 3000)
-    }
+    const userMessage: UserMessage = filmService.addFilmToStorage(FAVORITE_FILMS_KEY, film)
+    setUserMessage(userMessage)
+    setShowFavoriteMessage(true)
+    setTimeout(() => {
+      setShowFavoriteMessage(false)
+    }, 4000)
   }
 
   return (
     <div className="app">
-      {renderLogoImg()}
-      {renderFavoritesButton()}
-      {isFavoritesModalOpen && <FavoritesModal />}
-      {errorMessage && <ErrorMessage message={errorMessage} />}
+      <img className="logo-img" src={logo} alt="" />
+      <button className="show-favorites-films-btn" onClick={() => setIsFavoritesModalOpen(!isFavoritesModalOpen)}>My Favorite Films</button>
+      {isFavoritesModalOpen && <FavoritesModal setIsFavoritesModalOpen={setIsFavoritesModalOpen} />}
+      {showFavoriteMessage && <UserNotification userMessage={userMessage} />}
       <div className="main-container">
         <div className="film-table-list-box">
           {films?.map(film => <FilmItem key={film.episode_id} film={film} selectFilm={selectFilm} />)}
         </div>
-        {selectedFilm && <FilmPreview film={selectedFilm} addToFavorites={addToFavorites} />}
+        {selectedFilm ? <FilmPreview film={selectedFilm} addToFavorites={addToFavorites} /> :
+          <h2 className="missing-films-message">Click On One Of The Films...</h2>}
       </div>
 
     </div>
