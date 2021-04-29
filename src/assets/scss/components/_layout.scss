@@ -1,0 +1,63 @@
+.app {
+    margin: 0 auto;
+    position: relative;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.header {
+    width: 1000px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+
+    .logo-img {
+        width: 150px;
+        height: 100px;
+    }
+
+    .show-favorites-films-btn {
+        padding: 15px 25px;
+        border: none;
+        background-color: $secondary-color;
+        color: $primary-color;
+        border-radius: 20px;
+        font-family: 'Poppins', sans-serif;
+        box-shadow: 0px 10px 10px 2px #E0E0E0;
+        transition: transform 0.4s ease;
+        margin-left: 15px;
+
+        &:active {
+            transform: scale(0.9);
+        }
+
+    }
+}
+
+@media (max-width: 1250px) {
+    .main-container {
+        width: 80%;
+    }
+
+}
+@media (max-width: 1000px) {
+    .header {
+        width: 100%;
+    }
+
+}
+@media (max-width: 850px) {
+    .main-container {
+        flex-direction: column;
+    }
+}
+@media (max-width: 550px) {
+    .main-container {
+        width: 98%;
+    }
+}

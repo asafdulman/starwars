@@ -1,10 +1,9 @@
 .film-preview-box {
-    width: 70%;
-    height: 70vh;
+    width: 700px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 100px;
+    padding: 0 50px;
     animation: 0.4s ease-in-out 0s 1 slideInFromLeft;
 
     h1 {
@@ -23,11 +22,10 @@
     }
 
     button {
-        width: 40%;
         margin: 0 auto;
         background-color: $secondary-color;
         color: $primary-color;
-        padding: 15px 25px;
+        padding: 15px 40px;
         border: none;
         font-size: 1.5rem;
         border-radius: 5px;
@@ -48,5 +46,68 @@
 
     100% {
         transform: translateX(0);
+    }
+}
+
+@media (max-width: 950px) {
+    .film-preview-box {
+
+        h1 {
+            padding: 0;
+        }
+
+        p {
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+    }
+}
+@media (max-width: 850px) {
+    .film-preview-box {
+        margin-top: 20px;
+        width: 500px;
+        margin: 10px auto;
+        padding: 0 20px;
+
+        h1 {
+            margin: 10px 0;
+        }
+    }
+}
+@media (max-width: 630px) {
+    .film-preview-box {
+        width: 450px;
+
+        p {
+            font-size: 1rem;
+        }
+    }
+}
+@media (max-width: 550px) {
+    .film-preview-box {
+        width: 370px;
+        padding: 0;
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+}
+@media (max-width: 450px) {
+    .film-preview-box {
+
+    }
+}
+@media (max-width: 400px) {
+    .film-preview-box {
+        width: 360px;
+        p {
+            font-size: 0.9rem;
+        }
     }
 }

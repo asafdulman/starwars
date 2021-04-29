@@ -2,13 +2,46 @@
     background-color: $primary-color;
     color: $secondary-color;
     text-align: center;
-    margin: 15px 0;
+    margin: 5px 0;
     cursor: pointer;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px 15px;
     border: 1px solid $secondary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     p {
         font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 850px) {
+    .film-item-box {
+        width: 200px;
+
+        p {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    .film-item-box {
+        margin: 0 2px;
+
+        p {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+@media (max-width: 416px) {
+    .film-item-box {
+        width: 80%;
+
+        p {
+            font-size: 0.9rem;
+        }
     }
 }

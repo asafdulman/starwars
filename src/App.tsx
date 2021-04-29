@@ -6,9 +6,9 @@ import { FilmItem } from './components/FilmItem';
 import { FilmPreview } from './components/FilmPreview';
 import { FavoritesModal } from './components/FavoritesModal';
 import { FAVORITE_FILMS_KEY } from './constans';
-import logo from './assets/img/logo.png';
 import { UserMessage } from './types/userMessage.type';
 import { UserNotification } from './components/UserNotification';
+import logo from './assets/img/logo.png';
 
 function App() {
 
@@ -24,13 +24,16 @@ function App() {
 
   const getFilmsFromService = async () => {
     const films = await filmService.getFilms()
+    if (!films) {
+      showUserMessage({ message: 'There seems to be a problem with the server, please try again', status: 'error' })
+      return;
+    }
     setFilms(films)
   }
 
   const selectFilm = (film: Film): void => setSelectedFilm(film)
 
-  const addToFavorites = (film: Film): void => {
-    const userMessage: UserMessage = filmService.addFilmToStorage(FAVORITE_FILMS_KEY, film)
+  const showUserMessage = (userMessage: UserMessage) => {
     setUserMessage(userMessage)
     setShowFavoriteMessage(true)
     setTimeout(() => {
@@ -38,10 +41,17 @@ function App() {
     }, 4000)
   }
 
+  const addToFavorites = (film: Film): void => {
+    const userMessage: UserMessage = filmService.addFilmToStorage(FAVORITE_FILMS_KEY, film)
+    showUserMessage(userMessage)
+  }
+
   return (
     <div className="app">
-      <img className="logo-img" src={logo} alt="" />
-      <button className="show-favorites-films-btn" onClick={() => setIsFavoritesModalOpen(!isFavoritesModalOpen)}>My Favorite Films</button>
+      <div className="header">
+        <img className="logo-img" src={logo} alt="" />
+        <button className="show-favorites-films-btn" onClick={() => setIsFavoritesModalOpen(!isFavoritesModalOpen)}>My Favorite Films</button>
+      </div>
       {isFavoritesModalOpen && <FavoritesModal setIsFavoritesModalOpen={setIsFavoritesModalOpen} />}
       {showFavoriteMessage && <UserNotification userMessage={userMessage} />}
       <div className="main-container">

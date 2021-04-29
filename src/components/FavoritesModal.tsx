@@ -30,7 +30,6 @@ export function FavoritesModal({ setIsFavoritesModalOpen }: FavoritesModalProps)
     return (
         <div>
             {<div className="favorites-modal-box">
-
                 <h1>My Favorite Films</h1>
                 <div className="modal-films-list">
                     {favoriteFilms?.length === 0 ? <p>You have no favorite films.</p> : favoriteFilms?.map(film => <FavoriteFilm

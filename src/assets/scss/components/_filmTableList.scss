@@ -1,7 +1,26 @@
 .film-table-list-box {
-    width: 30%;
-    height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 850px) {
+
+    .film-table-list-box {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 750px) {
+
+    .film-table-list-box {
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+}
+@media (max-width: 630px) {
+
+    .film-table-list-box {
+        flex-wrap: wrap;
+    }
 }

@@ -3,9 +3,9 @@
     background-color: red;
     position: fixed;
     top: 0px;
-    left: 130px;
-    animation: 0.2s ease-in-out 0s 1 slideInFromTop;
-    border-radius: 0 0 20px 20px;
+    left: 0;
+    animation: 0.2s ease-in-out 0s 1 messageAnimation;
+    border-radius: 0 0 20px 0;
     padding: 10px;
     text-align: center;
 }
@@ -15,20 +15,20 @@
     background-color: green;
     position: fixed;
     top: 0px;
-    left: 130px;
-    animation: 0.2s ease-in-out 0s 1 slideInFromTop;
-    border-radius: 0 0 20px 20px;
+    left: 0;
+    animation: 0.2s ease-in-out 0s 1 messageAnimation;
+    border-radius: 0 0 20px 0;
     padding: 10px;
     text-align: center;
 }
 
-@keyframes slideInFromTop {
+@keyframes messageAnimation {
     0% {
-        transform: translateY(-100%);
+        transform: translateX(-100%);
     }
 
     100% {
-        transform: translateY(0);
+        transform: translateX(0);
     }
 
 }
