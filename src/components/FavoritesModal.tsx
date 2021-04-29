@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { FAVORITE_FILMS_KEY } from "../constans"
+import { FAVORITE_FILMS_KEY } from "../constants"
 import { filmService } from "../services/filmService"
 import { Film } from "../types/film.type"
 import { FavoriteFilm } from "./FavoriteFilm"

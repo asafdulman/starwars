@@ -5,7 +5,7 @@ import { Film } from './types/film.type';
 import { FilmItem } from './components/FilmItem';
 import { FilmPreview } from './components/FilmPreview';
 import { FavoritesModal } from './components/FavoritesModal';
-import { FAVORITE_FILMS_KEY } from './constans';
+import { FAVORITE_FILMS_KEY } from './constants';
 import { UserMessage } from './types/userMessage.type';
 import { UserNotification } from './components/UserNotification';
 import logo from './assets/img/logo.png';
