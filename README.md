@@ -1,3 +1,6 @@
+
+https://asafdulman.github.io/starwars/
+
 This is a Star Wars API exercise.
 
 Created with React, using Hooks, and designed with Scss.
@@ -9,3 +12,11 @@ Click on one of the films in the list, read the abstract, and add it to your fav
 Your favorite list will still be there, with the help of Local-Storage.
 
 Enjoy.
+
+## Running the project locally:
+
+##### Install dependencies
+`npm install`
+
+##### Running the app
+`npm start`

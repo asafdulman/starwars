@@ -39,6 +39,10 @@
     }
 }
 
+.missing-films-message {
+    margin: 250px auto;
+}
+
 @keyframes slideInFromLeft {
     0% {
         transform: translateX(100%);
@@ -99,8 +103,8 @@
     }
 }
 @media (max-width: 450px) {
-    .film-preview-box {
-
+    .missing-films-message {
+        margin: 50px auto;
     }
 }
 @media (max-width: 400px) {

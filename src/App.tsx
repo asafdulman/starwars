@@ -23,12 +23,14 @@ function App() {
   }, [])
 
   const getFilmsFromService = async () => {
-    const films = await filmService.getFilms()
-    if (!films) {
+    try {
+      const films = await filmService.getFilms()
+      setFilms(films)
+    } catch (error) {
+      console.error(error)
       showUserMessage({ message: 'There seems to be a problem with the server, please try again', status: 'error' })
       return;
-    }
-    setFilms(films)
+    }    
   }
 
   const selectFilm = (film: Film): void => setSelectedFilm(film)

@@ -10,12 +10,8 @@ export const filmService = {
 }
 
 async function getFilms(): Promise<Film[]> {
-    try {
         const films = await axios.get('https://swapi.dev/api/films/')
         return films.data.results
-    } catch (error) {
-        return error
-    }
 }
 
 function addFilmToStorage(key: string, film: Film): UserMessage {
